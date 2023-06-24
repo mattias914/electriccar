@@ -1,0 +1,134 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid_conteiner{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "navbar"
+    "aside"
+    "main"
+    "footer";
+}
+
+.navbar{
+  grid-area: navbar;
+  display: flex;
+  justify-content:space-between;
+  padding: .7rem;
+  align-items: center;
+  background-color: blue;
+  padding-left: 3%;
+  padding-right:3% ;
+  color: aliceblue;
+  height: 60px;
+}
+/*d-flex justify-content-between justify-content-lg-start p-3 align-items-center flex-lg-column bg-primary*/
+
+.nav_logo{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap:5px;
+}
+
+.nav_burger{
+  display: block;
+}
+
+.nav_list{
+  display: none;
+}
+
+/*d-none d-sm-flex justify-content-around flex-lg-column pt-lg-3 p-0 m-0 w-50*/
+.aside{
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 90px;
+  background-color: rgba(150, 150, 150, 0.694);
+}
+
+.aside_select{
+  display: inline-block;
+  width: 90%;
+}
+
+/*d-flex justify-content-around justify-content-lg-center px-4 flex-sm-column flex-lg-row mx-0 mt-sm-3 mt-lg-0*/
+
+.autos{
+  text-align: center;
+}
+
+main{
+  grid-area: main;
+}
+
+.footer{
+  grid-area: footer;
+  background-color: rgb(4, 4, 157);
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+  .grid_conteiner{
+    display: grid;
+    width: 100vw;
+    grid-template-rows: 1fr atuo auto;
+    grid-template-columns: .7fr 3fr;
+    grid-template-areas:
+      "navbar aside"
+      "navbar main"
+      "footer main";
+  }
+
+  .navbar{
+    flex-direction: column;
+    justify-content: stretch;
+    height: 100%;
+  }
+
+  .nav_logo{
+    margin-top: .5rem;
+  }
+
+  .nav_burger{
+    display: none;
+  } 
+
+  .nav_list{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+    text-align: center;
+  }
+
+  .nav_list li{
+    padding-top: .7rem;
+  }
+
+  ul{
+    padding: 0;
+  }
+
+  .autos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .auto{
+    flex-basis: calc(22% - 15px);
+  }
+}
